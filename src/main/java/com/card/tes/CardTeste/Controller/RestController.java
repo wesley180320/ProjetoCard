@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.*;
 
 
 @org.springframework.web.bind.annotation.RestController
-@RequestMapping(value = "/Card")
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping(value = "/ms-sefaz")
 public class RestController {
-    @RequestMapping(value = "/ConsultarCnpj", method = RequestMethod.POST)
+    @RequestMapping(value = "/ConsultarCnpjReceita", method = RequestMethod.POST)
     public ResponseEntity<Object> findPage(@RequestBody ConsultarCnpj ConsultarCnpj) {
         if(ConsultarCnpj.getCnpj() != null) {
             System.out.println(ConsultarCnpj.getCnpj());
